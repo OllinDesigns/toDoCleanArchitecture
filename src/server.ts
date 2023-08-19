@@ -1,8 +1,19 @@
-import app from '../index';
+import createApp from "../index";
 
 const port = process.env.PORT || 3000;
-const server = app.listen(port, () => {
-    console.log(`Gurrus is using express and sleeping in port ${port}`)
-})
+const app = createApp(); // Call createApp to get the express.Application instance
 
-export default server
+const server = app.listen(port, () => {
+  console.log(`Gurrus is using express and sleeping in port ${port}`);
+});
+
+export default server;
+
+// import createApp from '../index';
+
+// const port = process.env.PORT || 3000;
+// const server = createApp.listen(port, () => {
+//     console.log(`Gurrus is using express and sleeping in port ${port}`)
+// })
+
+// export default server
