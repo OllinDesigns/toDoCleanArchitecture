@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const taskService_1 = require("../services/taskService");
 const router = express_1.default.Router();
-router.post("/", express_1.default.urlencoded({ extended: false }), async (req, res) => {
+router.post("/tasks", express_1.default.urlencoded({ extended: false }), async (req, res) => {
     try {
         if (!req.body.text) {
             return res.status(400).send("Item field is required");

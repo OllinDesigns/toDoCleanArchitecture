@@ -3,23 +3,20 @@ import mongoose from "mongoose";
 export const taskSchema = new mongoose.Schema({
   date: {
     type: Date,
-    required: true
+    required: true,
   },
   text: {
     type: String,
-    required: true
+    required: true,
   },
   completed: { type: Boolean, default: false },
-  important: { type: Boolean, default: false }
+  important: { type: Boolean, default: false },
 });
-// mongoose.model('newTask', taskSchema)
-// no se si sirva
- 
 
 
-// propuesta codium
 
-// import mongoose from "mongoose";
+
+// propuesto por codium
 // import { Schema } from "mongoose"
 
 // interface ITask extends Document {
@@ -29,7 +26,7 @@ export const taskSchema = new mongoose.Schema({
 //   important: boolean;
 // }
 
-// const taskSchema: Schema = new Schema({
+// export const taskSchema: Schema = new Schema({
 //   date: {
 //     type: Date,
 //     required: true
@@ -41,9 +38,3 @@ export const taskSchema = new mongoose.Schema({
 //   completed: { type: Boolean, default: false },
 //   important: { type: Boolean, default: false }
 // });
-
-// export const TaskModel = mongoose.model<ITask>(
-//   'TaskModel',
-//   taskSchema,
-//   'Tasks'
-// );

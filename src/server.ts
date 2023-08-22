@@ -8,12 +8,3 @@ const server = app.listen(port, () => {
 });
 
 export default server;
-
-// import createApp from '../index';
-
-// const port = process.env.PORT || 3000;
-// const server = createApp.listen(port, () => {
-//     console.log(`Gurrus is using express and sleeping in port ${port}`)
-// })
-
-// export default server

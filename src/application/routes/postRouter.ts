@@ -5,7 +5,7 @@ import { createTask } from "../services/taskService";
 const router = express.Router();
 
 router.post(
-  "/",
+  "/tasks",
   express.urlencoded({ extended: false }),
   async (req: Request, res: Response) => {
     try {
