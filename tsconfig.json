@@ -128,7 +128,7 @@
       "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
     },
     "include": [
-      "./src/**/*.ts", "notes/oldworkingfiles/soylaRouter.ts",
+      "./src/**/*.ts", "notes/oldworkingfiles/soylaRouter.ts", "src/application/services/taskService.ts", "notes/forRevision/TaskRepositoryPort.ts", "notes/forRevision/CreateTaskService.ts", "notes/forRevision/CreateTaskController.ts",
       // "./tests/**/*.ts",
       // "app.ts",
       // "*.ts",
