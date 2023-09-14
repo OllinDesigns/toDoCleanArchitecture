@@ -33,7 +33,7 @@ You should see the messages "Gurrus is using express and sleeping in port 3000" 
 
 The file src/infrastructure/db.ts is responsible for the connection settings to the database. It uses an .env file to protect the connection string of every user. It works as follows:
 
-### set up .env
+### Setup .env
 
 Create a file .env in the root directory. The contens should be only this.
 
@@ -76,7 +76,7 @@ This project is tested with Postman. Here a link to test the HTTP requests of my
 
 ## Dependencies and Development Dependencies
 
-Check my [Title](package.json)
+Check my [package.json](package.json)
 <!-- The project uses the following dependencies:
 
     express: A fast, unopinionated, minimalist web framework for Node.js.
@@ -93,7 +93,7 @@ To run the tests, use the following command:
 
 The tests are written using Jest and are located in the __tests__ directory.
 
-## scripts
+## Scripts
 
 - npm run dev # run the "dev" package script
 
