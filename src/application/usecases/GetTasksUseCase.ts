@@ -1,6 +1,6 @@
 // src/application/usecases/GetTasksUseCase.ts
-import { TaskRepositoryPort } from '../ports/TaskRepositoryPort';
-import { ITask } from '../../domain/ITask';
+import { TaskRepositoryPort } from "../ports/TaskRepositoryPort";
+import { ITask } from "../../domain/ITask";
 
 export class GetTasksUseCase {
   constructor(private taskRepository: TaskRepositoryPort) {}
@@ -9,12 +9,3 @@ export class GetTasksUseCase {
     return this.taskRepository.findTasks();
   }
 }
-
-
-// // src/application/usecases/GetTasksUseCase.ts
-
-// import { ITask } from '../../domain/ITask';
-
-// export interface GetTasksUseCase {
-//   execute(): Promise<ITask[]>;
-// }

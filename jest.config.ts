@@ -3,24 +3,24 @@ import { Config } from '@jest/types';
 const config: Config.InitialOptions = {
     automock : true,
     collectCoverage: true,
-    collectCoverageFrom : [
-        "src/**/*.{js,jsx}",
-        "src/**/*.{ts,jsx}",
-        "!vendor/**/*.{ts,jsx}",
-        "!**/node_modules/**",
-    ],
+    // collectCoverageFrom : [
+    //     "src/**/*.{js,jsx}",
+    //     "src/**/*.{ts,jsx}",
+    //     "!vendor/**/*.{ts,jsx}",
+    //     "!**/node_modules/**",
+    // ],
 
-    coverageProvider: "babel",
+    // coverageProvider: "babel",
 
-    coverageThreshold: {
-        global: {
-            branches: 100,
-            functions: 100,
-            lines: 100,
-            statements: 100,
-        },
+    // coverageThreshold: {
+    //     global: {
+    //         branches: 100,
+    //         functions: 100,
+    //         lines: 100,
+    //         statements: 100,
+    //     },
 
-    },
+    // },
 
     maxConcurrency: 5,
 

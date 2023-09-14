@@ -1,7 +1,7 @@
 export interface ITask {
   _id: string;
   date: Date;
-  text: string; 
+  text: string;
   completed: boolean;
   important: boolean;
 }

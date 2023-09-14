@@ -9,7 +9,7 @@ const TaskRepository_1 = require("../../infrastructure/repositories/TaskReposito
 const router = express_1.default.Router();
 const taskRepository = new TaskRepository_1.TaskRepository();
 const createTaskUseCase = new CreateTaskUseCase_1.CreateTaskUseCase(taskRepository);
-router.post('/tasks', express_1.default.urlencoded({ extended: false }), async (req, res) => {
+router.post("/tasks", express_1.default.urlencoded({ extended: false }), async (req, res) => {
     try {
         const { text } = req.body;
         const newTask = await createTaskUseCase.execute(text);
@@ -17,8 +17,8 @@ router.post('/tasks', express_1.default.urlencoded({ extended: false }), async (
         res.json(newTask);
     }
     catch (err) {
-        console.error('Error saving data to MongoDB:', err);
-        res.status(500).send('Internal Server Error');
+        console.error("Error saving data to MongoDB:", err);
+        res.status(500).send("Internal Server Error");
     }
 });
 exports.default = router;

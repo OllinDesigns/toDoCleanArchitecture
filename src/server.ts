@@ -1,4 +1,4 @@
-import createApp from "../index";
+import createApp from "../app";
 
 const port = process.env.PORT || 3000;
 const app = createApp(); // Call createApp to get the express.Application instance

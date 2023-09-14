@@ -1,16 +1,15 @@
 // src/infrastructure/repositories/TaskRepository.ts
-import { TaskRepositoryPort } from '../../application/ports/TaskRepositoryPort';
-import { ITask } from '../../domain/ITask';
-import { DbModel } from '../dBModel';
-import mongoose from 'mongoose';
+import { TaskRepositoryPort } from "../../application/ports/TaskRepositoryPort";
+import { ITask } from "../../domain/ITask";
+import { DbModel } from "../dBModel";
+import mongoose from "mongoose";
 
 export class TaskRepository implements TaskRepositoryPort {
   async findTasks(): Promise<ITask[]> {
-    console.log('TaskRepository is being used')
+    console.log("Method findTasks from TaskRepository is being used");
     const tasks = await DbModel.find({});
     return tasks;
   }
-
 
   async createTask(text: string): Promise<ITask> {
     const newTask = new DbModel({
@@ -21,7 +20,7 @@ export class TaskRepository implements TaskRepositoryPort {
       important: false,
     });
 
-    console.log('method createTask from TaskRepository has been used')
+    console.log("Method createTask from TaskRepository has been used");
 
     await newTask.save();
     return newTask;
@@ -35,7 +34,7 @@ export class TaskRepository implements TaskRepositoryPort {
         { new: true }
       );
 
-      console.log('method updateTask from TaskRepository has been used')
+      console.log("Method updateTask from TaskRepository has been used");
 
       return updatedTask;
     } catch (error) {
@@ -52,6 +51,8 @@ export class TaskRepository implements TaskRepositoryPort {
         { new: true }
       );
 
+      console.log("method updateTaskText from TaskRepository has been used");
+
       return updatedTask;
     } catch (error) {
       console.error(`Error updating task text in MongoDB:`, error);
@@ -63,15 +64,12 @@ export class TaskRepository implements TaskRepositoryPort {
     try {
       const result = await DbModel.findByIdAndDelete(taskId);
 
-      console.log('method deleteTask from TaskRepository has been used')
+      console.log("method deleteTask from TaskRepository has been used");
 
-      return !!result
+      return !!result;
     } catch (error) {
       console.error(`Error updating task text in MongoDB:`, error);
       throw error;
-
     }
-    
-  } 
+  }
 }
-

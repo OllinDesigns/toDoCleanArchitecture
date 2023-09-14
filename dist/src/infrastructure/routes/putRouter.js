@@ -10,14 +10,14 @@ const UpdateTaskTextUseCase_1 = require("../../application/usecases/UpdateTaskTe
 const router = express_1.default.Router();
 const updateTaskUseCase = new UpdateTaskUseCase_1.UpdateTaskUseCase(new TaskRepository_1.TaskRepository());
 const updateTaskTextUseCase = new UpdateTaskTextUseCase_1.UpdateTaskTextUseCase(new TaskRepository_1.TaskRepository());
-router.put('/tasks/:id', async (req, res) => {
+router.put("/tasks/:id", async (req, res) => {
     try {
         const { id: taskId } = req.params;
         const { completed } = req.body;
         const updatedTask = await updateTaskUseCase.execute(taskId, completed);
         console.log(`Task status changed ${JSON.stringify(updatedTask)}`, completed);
         if (!updatedTask) {
-            res.status(404).json({ error: 'Task not found' });
+            res.status(404).json({ error: "Task not found" });
         }
         else {
             res.json(updatedTask);
@@ -25,17 +25,17 @@ router.put('/tasks/:id', async (req, res) => {
     }
     catch (err) {
         console.error(`Error updating task:`, err);
-        res.status(500).send('Internal Server Error');
+        res.status(500).send("Internal Server Error");
     }
 });
-router.put('/tasks/text/:id', async (req, res) => {
+router.put("/tasks/text/:id", async (req, res) => {
     try {
         const { id: taskId } = req.params;
         const { text } = req.body;
         const updatedTask = await updateTaskTextUseCase.execute(taskId, text);
         console.log(`Task status changed ${JSON.stringify(updatedTask)}`, text);
         if (!updatedTask) {
-            res.status(404).json({ error: 'Task not found' });
+            res.status(404).json({ error: "Task not found" });
         }
         else {
             res.json(updatedTask);
@@ -43,7 +43,7 @@ router.put('/tasks/text/:id', async (req, res) => {
     }
     catch (err) {
         console.error(`Error updating task text:`, err);
-        res.status(500).send('Internal Server Error');
+        res.status(500).send("Internal Server Error");
     }
 });
 exports.default = router;

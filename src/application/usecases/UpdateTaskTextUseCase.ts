@@ -1,7 +1,7 @@
 // src/application/usecases/UpdateTaskTextUseCase.ts
 
-import { TaskRepositoryPort } from '../ports/TaskRepositoryPort';
-import { ITask } from '../../domain/ITask';
+import { TaskRepositoryPort } from "../ports/TaskRepositoryPort";
+import { ITask } from "../../domain/ITask";
 
 export class UpdateTaskTextUseCase {
   constructor(private taskRepository: TaskRepositoryPort) {}

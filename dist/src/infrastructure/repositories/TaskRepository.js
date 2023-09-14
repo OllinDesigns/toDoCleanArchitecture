@@ -8,7 +8,7 @@ const dBModel_1 = require("../dBModel");
 const mongoose_1 = __importDefault(require("mongoose"));
 class TaskRepository {
     async findTasks() {
-        console.log('TaskRepository is being used');
+        console.log("Method findTasks from TaskRepository is being used");
         const tasks = await dBModel_1.DbModel.find({});
         return tasks;
     }
@@ -20,14 +20,14 @@ class TaskRepository {
             completed: false,
             important: false,
         });
-        console.log('method createTask from TaskRepository has been used');
+        console.log("Method createTask from TaskRepository has been used");
         await newTask.save();
         return newTask;
     }
     async updateTask(taskId, completed) {
         try {
             const updatedTask = await dBModel_1.DbModel.findByIdAndUpdate(taskId, { completed: completed }, { new: true });
-            console.log('method updateTask from TaskRepository has been used');
+            console.log("Method updateTask from TaskRepository has been used");
             return updatedTask;
         }
         catch (error) {
@@ -38,6 +38,7 @@ class TaskRepository {
     async updateTaskText(taskId, newText) {
         try {
             const updatedTask = await dBModel_1.DbModel.findByIdAndUpdate(taskId, { text: newText }, { new: true });
+            console.log("method updateTaskText from TaskRepository has been used");
             return updatedTask;
         }
         catch (error) {
@@ -48,7 +49,7 @@ class TaskRepository {
     async deleteTask(taskId) {
         try {
             const result = await dBModel_1.DbModel.findByIdAndDelete(taskId);
-            console.log('method deleteTask from TaskRepository has been used');
+            console.log("method deleteTask from TaskRepository has been used");
             return !!result;
         }
         catch (error) {

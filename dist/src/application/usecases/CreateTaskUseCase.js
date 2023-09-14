@@ -10,7 +10,7 @@ class CreateTaskUseCase {
             throw new Error("Item field is required");
         }
         const newTask = await this.taskRepository.createTask(text);
-        return { status: "success", task: newTask };
+        return newTask;
     }
 }
 exports.CreateTaskUseCase = CreateTaskUseCase;
