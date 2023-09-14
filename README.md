@@ -66,6 +66,7 @@ This project is tested with Postman. Here a link to test the HTTP requests of my
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/28879225-513d6f15-4432-40e5-a301-6fae55009350?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D28879225-513d6f15-4432-40e5-a301-6fae55009350%26entityType%3Dcollection%26workspaceId%3Dbd377f3c-3039-46e6-950b-a0a6cf871bf7)
 
+- note: for a POST HTTP request use addTakswithbetterroutes instead of addTask. addTakswithbetterroutes has the right toutes
 
 <!-- ## Key Components
 
